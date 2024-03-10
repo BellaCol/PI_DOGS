@@ -7,9 +7,10 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import axios from 'axios'
+require('dotenv').config();
+const {END_POINT} = process.env;
 
-axios.defaults.baseURL='http://localhost:3001'
-//axios.defaults.baseURL='https://pi-dogs-au1o.onrender.com'
+axios.defaults.baseURL=END_POINT||'http://localhost:3001'
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
