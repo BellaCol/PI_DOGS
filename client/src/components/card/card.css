@@ -1,0 +1,61 @@
+.Card {
+  color: #BD9240;
+  text-align: center;
+}
+
+/* Estilos para la tarjeta */
+.card {
+  background-color: #DDD6CC; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.card-title {
+  color: #19222B; 
+  font-size: 18px;
+  margin-bottom: 10px; 
+}
+
+.card-description {
+  color: #19222B; 
+  font-size: 14px; 
+}
+
+.image-container {
+  width: 200px;
+  height: 200px; 
+  overflow: hidden; 
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card-image {
+  margin: auto;
+  display: block;
+  width: 100%; 
+  border-radius: 5px; 
+  height: auto;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-image:hover {
+  box-shadow: 4px 4px 8px #c28e97;
+  transform: translateY(3px);
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    width: 200px; 
+    height: 200px; 
+  }
+
+  .card-title {
+    font-size: 16px; 
+  }
+
+  .card-description {
+    font-size: 12px; 
+  }
+}

@@ -1,0 +1,31 @@
+  div.filterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+    div.filter{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+        width: 450px;
+        width: 100%;
+    }
+        button.filter {
+            height:18px;
+            line-height: 1px;
+            padding: auto;
+            background-color:#B84357;
+            color: #FFF;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+  
+            button.filter:hover {
+                background-color:#ba841f; 
+                box-shadow: 4px 4px 8px  #d8b471;
+                transform: translateY(-3px);
+            }
+  
+  

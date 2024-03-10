@@ -1,0 +1,25 @@
+.cards-container{
+  color:  #B84357;
+  
+} 
+  .div-buttom{
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+    /* Estilos para el botones siguiente y anterior */
+   button {
+
+    background-color: #BD9240;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color:#ba841f; 
+    box-shadow: 4px 4px 8px  #d8b471;
+    transform: translateY(-3px);
+  }

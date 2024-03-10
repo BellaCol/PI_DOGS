@@ -1,0 +1,43 @@
+/* landing.css */
+
+.landing-container {
+    background-image: url('https://1.bp.blogspot.com/-YhUlO988hiM/WM5sQI_eFEI/AAAAAAAAAOw/A7lti1flC74y_R2MU7_IMAoSYsvKKINKgCLcB/s1600/Fondo+de+pantalla+perros+19.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-title {
+    font-size: 2rem;
+    color: #19222B;
+    margin-bottom: 20px;
+}
+
+.landing-description {
+    font-size: 1rem;
+    color: #B84357;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
+.landing-button {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: #BD9240;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

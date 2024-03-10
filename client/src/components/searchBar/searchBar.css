@@ -1,0 +1,23 @@
+  
+.inputSearch {
+  width: auto;
+}
+
+.buttonSearch {
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #BD9240;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttonSearch:hover {
+    background-color:#ba841f; 
+    box-shadow: 4px 4px 8px  #d8b471;
+    transform: translateY(-3px);
+  }
+  
+  

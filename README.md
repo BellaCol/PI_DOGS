@@ -93,8 +93,8 @@ La idea de este proyecto es construir una aplicación web a partir de la API [**
 
 ### **Únicos end-points que se pueden utilizar**
 
--  [**TheDogApi**](https://api.thedogapi.com/v1/breeds)
--  **Search By 'Raza':** _"https://api.thedogapi.com/v1/breeds/search?q={raza_perro}"_
+-  [**TheDogApi**](`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
+-  **Search By 'Raza':** _(`https://api.thedogapi.com/v1/breeds/search?q=${raza_perro}&api_key=${API_KEY}`)
 
 <br />
 
