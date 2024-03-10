@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import axios from 'axios'
 
-//axios.defaults.baseURL='http://localhost:3001'
-axios.defaults.baseURL='https://pi-dogs-au1o.onrender.com'
+axios.defaults.baseURL='http://localhost:3001'
+//axios.defaults.baseURL='https://pi-dogs-au1o.onrender.com'
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
