@@ -40,6 +40,7 @@ const Form = ({temperaments}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(formData.temperament.length===0){return;} 
     try {
       await axios.post('/dogs', formData);
       console.log('Form data sent successfully!');

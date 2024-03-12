@@ -34,7 +34,7 @@ export const getTemperaments =() => {
          console.error('Error getting temperaments:', error.message);
        }
       
-   }
+   } 
    
 }
 export const upDate =() => {
@@ -52,7 +52,7 @@ export const getBreed =(name) => {
          const {data} = await axios(`/dogs/search?nameBreed=${name}`)
          return dispatch({
             type:GET_BREED,
-            payload:data
+            payload:{data,name}
          })
       }catch(error){
          console.log(error.message);

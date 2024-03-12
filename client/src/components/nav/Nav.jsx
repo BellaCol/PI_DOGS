@@ -22,14 +22,15 @@ const Nav= function(){
         <Link className='link' to="/"  >
             Inicio
         </Link>
-        
-        <Link className='link' to="/home" onClick={handleClick}>
+        <Link className='link' to="/home" /*onClick={handleClick}*/>
             Home
         </Link>    
-        
         <Link className='link' to="/form">
             Registrar Raza
         </Link>
+        {location.pathname==='/home'&&<Link className='link' to="/home" onClick={handleClick}>
+            Reiniciar Filtros
+        </Link>}
        
         
     </div>

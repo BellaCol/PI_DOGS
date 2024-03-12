@@ -7,19 +7,24 @@
     display: flex;
     justify-content: flex-end;
   }
-    /* Estilos para el botones siguiente y anterior */
-   button {
 
-    background-color: #BD9240;
-    color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    .pagination-link {
+    color: #d8b471;
+    text-decoration: underline;
+    cursor: pointer; 
+    transition: transform 0.2s; 
+    display: inline-block; 
+    padding: 8px 6px; 
   }
   
-  button:hover {
-    background-color:#ba841f; 
-    box-shadow: 4px 4px 8px  #d8b471;
-    transform: translateY(-3px);
+  .pagination-link.active {
+    color: #f5e5c8; 
+    text-decoration: underline;
+    transform: translateY(-2px); 
+
   }
+  .pagination-link:hover {
+    font-weight: bold;
+    color: #dabb83;
+  }
+  

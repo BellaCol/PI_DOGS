@@ -3,7 +3,9 @@ import { ADD_ALL, FILTER, ORDER, GET_TEMPERAMENTS, GET_BREED, UPDATE} from "./ac
 const initialState={
     allCharacters:[],
     characters:[],
-    temperaments:[]
+    temperaments:[],
+    allCharactersBreed:[],
+    breedName:null
 }
 
 const rootReducer= function(state=initialState, actions){
@@ -13,7 +15,9 @@ const rootReducer= function(state=initialState, actions){
 
             return { ...state, 
                 allCharacters: actions.payload,
-                characters: actions.payload
+                characters: actions.payload,
+                allCharactersBreed:actions.payload,
+                breedName:null
             } 
         case GET_TEMPERAMENTS:
             
@@ -25,28 +29,42 @@ const rootReducer= function(state=initialState, actions){
             
             return { ...state, 
                 characters: state.allCharacters,
+                allCharactersBreed:state.allCharacters,
+                breedName:null
             }
         
         case GET_BREED:
         
             return {...state,
-                characters: actions.payload
+                allCharactersBreed:actions.payload.data,
+                characters:actions.payload.data,
+                breedName:actions.payload.name
             }
         case FILTER:
             const { origin, temperaments } = actions.payload;
             if(origin==='api'){
                 if(temperaments==='allTemperaments'){
-                    const copy1= state.allCharacters.filter((dog)=>dog.origin==='API')
-                    
+                    const copy1= state.allCharactersBreed.filter((dog)=>dog.origin==='API')
+                    if(!copy1.length){
+                        window.alert(`No existen razas con los filtros especificados dentro de la busqueda ${state.breedName&&state.breedName}`)
+                        return{
+                            ...state,
+                        } 
+                    }
                     return{
                         ...state,
                         characters:copy1
                     }   
                 }else{
-                    const copy1= state.allCharacters.filter((dog)=>dog.origin==='API')
+                    const copy1= state.allCharactersBreed.filter((dog)=>dog.origin==='API')
                     const copy2 = copy1.filter((dog) => (dog.temperament))
                     const copy3= copy2.filter((dog)=>dog.temperament.includes(temperaments)) 
-
+                    if(!copy3.length){
+                        window.alert(`No existen razas con los filtros especificados dentro de la busqueda "${state.breedName?state.breedName:"general"}"`)
+                        return{
+                            ...state,
+                        } 
+                    }
                     return{
                         ...state,
                         characters:copy3
@@ -54,12 +72,11 @@ const rootReducer= function(state=initialState, actions){
                 }
             }else if(origin==='db'){
                 if(temperaments==='allTemperaments'){
-                    const copy1= state.allCharacters.filter((dog)=>dog.origin==='DB')
+                    const copy1= state.allCharactersBreed.filter((dog)=>dog.origin==='DB')
                     if(!copy1.length){
-                        window.alert('No existe el(los) registro(s) en la base de datos')
+                        window.alert(`No existen razas con los filtros especificados dentro de la busqueda "${state.breedName?state.breedName:"general"}"`)
                         return{
-                            ...state,
-                            characters: state.allCharacters            
+                            ...state,           
                         } 
                     }
                     return{
@@ -67,14 +84,13 @@ const rootReducer= function(state=initialState, actions){
                         characters:copy1
                     }  
                 }else{
-                    const copy1= state.allCharacters.filter((dog)=>dog.origin==='DB')
+                    const copy1= state.allCharactersBreed.filter((dog)=>dog.origin==='DB')
                     const copy2 = copy1.filter((dog) => (dog.temperament))
                     const copy3= copy2.filter((dog)=>dog.temperament.includes(temperaments)) 
                     if(!copy3.length){
-                        window.alert('No existe el(los) registro(s) en la base de datos')
+                        window.alert(`No existen razas con los filtros especificados dentro de la busqueda "${state.breedName?state.breedName:"general"}"`)
                         return{
                             ...state,
-                            characters: state.allCharacters
                         } 
                     }
                     return{
@@ -87,11 +103,17 @@ const rootReducer= function(state=initialState, actions){
                     
                     return{
                         ...state,
-                        characters:state.allCharacters
+                        characters:state.allCharactersBreed
                     }   
                 }else{
-                    const copy1 = state.allCharacters.filter((dog) => (dog.temperament))
+                    const copy1 = state.allCharactersBreed.filter((dog) => (dog.temperament))
                     const copy2= copy1.filter((dog)=>dog.temperament.includes(temperaments)) 
+                    if(!copy2.length){
+                        window.alert(`No existen razas con los filtros especificados dentro de la busqueda "${state.breedName?state.breedName:"general"}"`)
+                        return{
+                            ...state,
+                        } 
+                    }
                     return{
                         ...state,
                         characters:copy2
